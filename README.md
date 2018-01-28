@@ -5,4 +5,4 @@ Install and run application:
 1. npm install
 2. create mongodb DB called shopping-cart
 3. run mongodb
-4. pm start
+4. npm start
