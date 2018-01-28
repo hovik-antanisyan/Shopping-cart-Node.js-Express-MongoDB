@@ -1,0 +1,40 @@
+{{#if products.length}}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <ul class="list-group">
+                {{#each products}}
+                    <li class="list-group-item">
+                        <span class="badge">{{this.qty}}</span>
+                        <b>{{this.item.title}}</b>
+                        <span class="label label-success">${{this.item.price}}</span>
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Action <i class="caret"></i></button>&nbsp;
+                            <ul class="dropdown-menu">
+                                <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+                                <li><a href="/remove-item/{{this.item._id}}">Remove all</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <b>Total: {{session.cart.totalPrice}}</b>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <div class="col-sm-6 col-sm-offset-3">
+            <a href="/checkout" class="btn btn-success" type="button">Checkout</a>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1><b>Cart is empty</b></h1>
+        </div>
+    </div>
+{{/if}}

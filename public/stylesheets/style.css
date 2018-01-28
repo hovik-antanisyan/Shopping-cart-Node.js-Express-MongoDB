@@ -1,0 +1,16 @@
+.thumbnail > img {
+    max-height: 150px;
+}
+
+.thumbnail .description {
+    color: #151515;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.signin-signup label {
+    min-width: 100px;
+}
